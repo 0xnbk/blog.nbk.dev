@@ -1,56 +1,135 @@
-html { margin: 20px }
 body {
   margin: 0 auto;
-  font-family: 'Baskerville', Georgia, Times, serif;
+  font-family: 'Georgia', Times, serif;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 1.6em;
   padding: 15px;
   width: 720px;
 
 }
+.profiles > header, .markdown h1 {
+  text-align: left;
+	display: block;
+	line-height: 96px;
+	margin-bottom: 25px;
+}
+h1, h2, h3, h4 {
+  font-family: 'Myriad Pro', 'Droid Serif', 'Georgia', serif;
+  display: inline;
+  margin: 0;
+  font-weight: normal;
+}
+ul, li {
+  list-style-type: none;
+}
+code {
+  color: #661111;
+  font-family: 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', 'Monaco', Courier, monospace;
+  font-size: 18px;
+  margin: 0 2px;
+}
+pre {
+  line-height: 1.3em;
+  padding: 0 20px;
+}
+img {
+  border: 0;
+}
+blockquote, blockquote code {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 30px;
+  color: #666;
+  color: #661111;
+}
 header, footer, section, article {
 	display: block;
-}
-#content {
-}
-#by {
-	font-style: italic;
-  margin-right: 5px;
-	font-size: 28px;
 }
 #caption {
 	position: absolute;
 	font-size: 24px;
 	margin: -135px 0 0 70px;
 }
-#path {
-	color: #b53131;
-}
-.date {
-  font-style: italic;
-  float: right;
-  line-height: 43px;
-  margin-right: 30px;
-}
-a {
+.path {
   color: #b83000;
 }
-h1 a {
-  color: black;
+.path:first-letter {
+  color: #ddd;
+}
+
+#log {
+  margin-bottom: 30px;
+}
+#log h2 {
+  font-family: 'Myriad Pro', Arial, sans-serif;
+}
+
+a, #subscribe a:hover {
   text-decoration: none;
+  border-bottom: 1px dotted #bbb;
+  color: black;
 }
-a:hover {
-  text-decoration: underline;
+a:hover, #subscribe a {
+  color: #b83000;
 }
-body > header > h1 {
-	border-left: 30px solid black;
-	padding-left: 30px;
-  font-size: 201px;
-  margin: 100px 0 15px 0;
+.profiles h1, .markdown h1 {
+  font-size: 42px;
   font-weight: normal;
 }
+.markdown h1 {
+  margin: 25px 0 15px 15px;
+  text-align: center;
+  margin: 25px 0 15px 0 !important;
+  text-align: center !important;
+  padding-left: 0 !important;
+}
+body > section > header > h1 a,
+body > section > header > h1 a:hover {
+  color: inherit;
+  border: 0;
+  text-decoration: none;
+}
+.profiles h1 > #ext,
+.profiles h1 > a #ext {
+  color: #b83000;
+}
 .post header {
-	margin-bottom: 10px;
+  line-height: 1.3em;
+	margin-bottom: 15px;
+}
+.post .content p:first-child:first-letter {
+  /*padding-right: 10px;
+  font-size: 64px;
+  vertical-align: bottom;
+  margin-top: 10px;
+  float: left;*/
+}
+.post .content blockquote p:first-child:first-letter {
+  font-size: inherit;
+  line-height: inherit;
+  float: none;
+  padding-right: 0;
+}
+.post header h1 {
+  display: block;
+  font-size: 34px;
+  padding-top: 5px;
+  line-height: 1.2em;
+  margin-bottom: 10px;
+}
+.post .content h2 {
+  display: block;
+  margin-top: 30px;
+  font-size: 26px;
+}
+.post header h1 a, #articles li a {
+  padding: 0;
+  text-decoration: none;
+}
+.date {
+  text-align: right;
+  font-size: 16px;
+  color: #bbb;
 }
 .post .body p:first-child {
 	margin-top: 0;
@@ -59,52 +138,146 @@ body > header > h1 {
 	margin-bottom: 0;
 }
 .post {
-	margin-bottom: 30px;
+  border-bottom: 1px dotted #888;
+  padding-bottom: 25px;
+	margin-bottom: 20px;
 }
 .post:last-child {
   margin-bottom: 10px;
+  border-bottom: 0px dotted #888;
+}
+.post p:first-child {
+  text-indent: 0px;
 }
 .post p {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 .post .more {
-  margin-top: -10px;
   margin-right: 30px;
+  margin-left: 15px;
   font-style: italic;
-  text-align: right;
+  text-align: left;
 }
-.more a {
-  text-decoration: none;
+.post > section { margin-bottom: 30px }
+
+section #articles {
+  font-family: 'Myriad Pro', 'Georgia', serif;
+  margin-top: 10px;
 }
-.more a:hover { text-decoration: underline }
-body > header {
-	display: block;
-	padding-top: 30px;
-	line-height: 180px;
-	margin-bottom: 20px;
+section #articles li {
+  padding-bottom: 10px;
 }
-h1, h2, h3, h4 {
-  display: inline;
-  margin: 0;
-  font-weight: 600;
+section #articles li:last-child {
+  border-bottom: 0px;
 }
-ul, li {
-  list-style-type: none;
-}
-code {
-  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
-}
-pre {
-  padding: 20px;
-}
-blockquote {
-  font-style: italic;
+section #articles .wc {
+  font-size: 0.9em;
+  color: #bbb;
 }
 
-body > footer {
-  text-align: left;
-  margin-left: 10px;
-	font-style: italic;
-  font-size: 18px;
-  color: #888;
+/* mid dot */
+.separator {
+  font-size: 1.1em;
+  margin: 0 5px;
 }
+
+#articles ul {
+  -webkit-padding-start: 0;
+  margin: 0 auto;
+  padding 0;
+}
+#articles h2 {
+  letter-spacing: 10px;
+  font-style: italic;
+  text-align: center;
+  display: block;
+  font-size: 24px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+body > footer {
+  margin-top: 45px;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #bbb;
+  line-height: 26px;
+}
+body > footer p {
+  margin: 0;
+}
+#subscribe {
+  width: 720px;
+  color: #888;
+  font-size: 18px;
+  margin-left: -50px;
+  padding-top: 10px;
+  margin-right: 30px;
+  text-align: center;
+  font-style: italic;
+}
+textarea {
+  font-size: 14px;
+}
+
+.profiles header {
+  line-height: normal;
+  margin-bottom: 15px;
+  text-align: left;
+  padding: 0;
+}
+.profiles header h1 {
+  font-family: 'Droid Serif', 'Myriad Pro', 'Georgia', sans-serif;
+  border-bottom: 1px dotted #bbb;
+  margin-bottom: 15px;
+  text-align: left;
+  padding: 0;
+  padding-bottom: 5px;
+  font-size: 60px;
+}
+.profile {
+  text-decoration: none;
+  font-size: 28px;
+  border: 0;
+  color: black;
+}
+.profile:hover {
+  text-decoration: none;
+}
+.profile:hover:before {
+  color: black;
+}
+.profile:hover:after {
+  color: black;
+}
+.profile:before {
+  color: white;
+  border: 0;
+  content: "{";
+}
+.profile:after {
+  color: white;
+  border: 0;
+  content: "}";
+}
+.profiles {
+  position: fixed;
+  -webkit-padding-start: 0;
+  bottom: 170px;
+  right: 45px;
+  /*margin-left: 660px;*/
+  text-align: right;
+}
+.profiles ul { margin-top: 15px; padding-left: 0; }
+.profiles li, .profiles ul {
+  display: inline;
+}
+.profiles li {
+  margin-left:4px;
+  margin-right:4px;
+}
+.profile li:first-child {
+  margin-left:0px;
+  margin-right:20px;
+}
+
