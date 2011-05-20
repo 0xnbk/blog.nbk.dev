@@ -3,12 +3,23 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title><%= title %></title>
   </head>
   <body>
+        <header>
+        <span>
+          <a href="http://nikhilben.com" rel="alternate" type="application/rss+xml" id="feed-icon"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+          <a href="/">nikhilben.com</a>
+        </span>
+        <ul>
+          <li><a href="http://nikhil.heroku.com">log</a></li>
+          <li><a href="http://github.com/nikhilben/">github</a></li>
+          <li><a href="http://twitter.com/NikhilKuruvilla">twitter</a></li>
+        </ul>
+      </header>
     <section>
-      <%= yield %> 
+      <%= yield %>
     </section>
     <footer>
       powered by <a href="http://cloudhead.io/toto">toto</a>
