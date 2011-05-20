@@ -1,8 +1,0 @@
-title: Planning to shift my blog
-author: Nikhil Ben Kuruvilla
-date: 2011/05/19
-slug: planning-to-shift-blog
-
-I am planning to shift my blog to use toto. Powerful and
-simple blog engine for geeks. Built on top of Ruby, can be easily deployed using Heroku while harnessing the power of version control through git.
-
