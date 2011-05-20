@@ -5,6 +5,56 @@
     <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title><%= title %></title>
+    <style>
+      body > header {
+        font-family: 'Myriad Pro', Arial, sans-serif;
+        text-align: right;
+        width: 720px;
+        font-size: 18px;
+      }
+      body > header a {
+        color: #ddd;
+        border: 0;
+      }
+      body > header:hover a {
+        color: black;
+        border-bottom: 1px dotted #bbb; }
+      body > header a:hover {
+        color: #b83000;
+      }
+      body > header li {
+        display: inline;
+        margin: 0 15px;
+      }
+      body > header ul {
+        margin: 0;
+        padding: 0;
+      }
+      body > header > span {
+        float: left;
+      }
+      #feed-icon {
+        border: 0;
+        margin-right: 5px;
+      }
+      #feed-icon img {
+        margin-top: -5px;
+      }
+      #home {
+        margin: 0;
+        padding: 0;
+      }
+      #home > section {
+        min-width: 720px;
+        position: absolute;
+        margin: 0;
+        bottom: 0;
+        padding: 0;
+        height: 800px;
+        width: 960px;
+        background: url(/images/cloudhead.png) no-repeat scroll 30px bottom;
+      }
+    </style>
   </head>
   <body>
         <header>
