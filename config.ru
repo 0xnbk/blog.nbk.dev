@@ -17,7 +17,7 @@ toto = Toto::Server.new do
   # Add your settings here
   # set [:setting], [value]
   #
-  # set :author,    ENV['USER']                               # blog author
+    set :author,    'Nikhil Ben Kuruvilla'                               # blog author
     set :title,     'dev.nikhilben.com'                   # site title
   # set :root,      "index"                                   # page to load on /
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }  # date format for articles
