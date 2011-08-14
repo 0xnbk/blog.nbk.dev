@@ -3,5 +3,5 @@ author: Nikhil Ben Kuruvilla
 date: 2011/08/14
 slug: what-mysql-does-not-tell-you.txt
 
-<span>Just uploaded my new Google Chrome extension, DuckDuckGo search. So what is DuckDuckGo ? DuckDuckGo is a search engine. You can use it instead of Google for : Zero-click Info, Privacy, Goodies and Less Spam.</span>
+<span>/span>
 
