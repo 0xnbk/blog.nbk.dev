@@ -1,3 +1,6 @@
+html{
+border-top:#000 3px solid;
+}
 body {
   margin: 0 auto;
   font-family: 'Georgia', Times, serif;
@@ -5,6 +8,7 @@ body {
   line-height: 1.6em;
   padding: 15px;
   width: 720px;
+
 
 }
 .profiles > header, .markdown h1 {
@@ -29,9 +33,16 @@ code {
   margin: 0 2px;
 }
 pre {
-  line-height: 1.3em;
-  padding: 0 20px;
+  overflow-x:auto;
+  font-family:Courier, monospace;
+  padding:20px 25px;
+  background:#FDFDFD;
+  text-shadow:#FFF 0 1px 0;
+  margin-bottom:20px;
+  font-size:15px;color:#555;
+  border:solid 1px #EEE;
 }
+
 img {
   border: 0;
 }
@@ -279,5 +290,44 @@ textarea {
 .profile li:first-child {
   margin-left:0px;
   margin-right:20px;
+}
+#dsq-footer,
+.dsq-avatar,
+.dsq-trackback-url,
+#dsq-global-toolbar,
+#dsq-sort-select,
+#dsq-reply h3,
+#dsq-content h3 {
+  display: none !important;
+}
+.dsq-comment {
+  background: #F4F6FB !important;
+  padding: 20px !important;
+  margin-bottom: 10px !important;
+}
+.dsq-comment-header {
+  background: 0 !important;
+  border: 0 !important;
+  padding-left: 0 !important;
+}
+.dsq-commenter-name {
+  font-family: "Bitter", sans-serif;
+  font-weight: normal !important;
+  font-size: 17px !important;
+  color: #111 !important;
+}
+.dsq-comment-body {
+  padding: 5px 10px 5px 15px !important;
+  color: #444 !important;
+}
+.dsq-comment-footer {
+  font-size: 13px !important;
+  color: #72797E !important;
+}
+.dsq-textarea {
+  margin-left: 0 !important;
+}
+.dsq-moderator {
+  background: #FFFADB !important;
 }
 

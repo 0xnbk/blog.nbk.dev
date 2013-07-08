@@ -55,25 +55,48 @@
         width: 960px;
         background: url(/images/cloudhead.png) no-repeat scroll 30px bottom;
       }
+
+      .line-numbers {
+        display: none;
+      }
+
+      .gist-meta {
+        display:none;
+      }
     </style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20512758-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
   </head>
   <body>
         <header>
+	
         <span>
           <a href="http://blog.nikhilben.com" ><img src="http://28.media.tumblr.com/avatar_fe6dca61e6e2_16.png" alt="" style="vertical-align:middle;border:0"/></a>
           <a href="/">blog.nikhilben.com</a>
         </span>
         <ul>
-          <li><a href="http://nikhilben.com" target="_blank">about</a></li>
-          <li><a href="http://github.com/nikhilben/" target="_blank">github</a></li>
+          <li><a href="/about/">about</a></li>
+          <li><a href="/archives/">archives</a></li>
           <li><a href="http://twitter.com/NikhilKuruvilla" target="_blank">twitter</a></li>
         </ul>
+
       </header>
     <section>
       <%= yield %>
     </section>
     <footer>
-      Copyright &copy; 2011 - 2012 <a href="http://nikhilben.com" target="_blank">Nikhil Ben Kuruvilla</a> | Powered by <a href="http://heroku.com" target="_blank">Heroku</a>
+      Copyright &copy; 2011 - 2012 <a href="http://nikhilben.com" target="_blank">Nikhil Ben Kuruvilla</a> | Powered by <a href="https://github.com/cloudhead/toto" target="_blank">toto</a> | Hosted on <a href="http://heroku.com" target="_blank">Heroku</a>
     </footer>
   </body>
 </html>
