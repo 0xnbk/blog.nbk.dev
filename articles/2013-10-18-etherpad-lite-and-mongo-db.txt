@@ -3,4 +3,6 @@ author: Nikhil Ben Kuruvilla
 date: 2013/10/18
 slug: etherpad-lite-and-mongo-db
 
-By default Etherpad Lite seems to support dirty, postgres, sqlite and mysql. But Etherpad Lite can be also used with MongoDB with little hack. Thanks to UeberDB, the database abstraction layer used for Etherpad. So Etherpad can be configured to use with level, redis, Cassandra or Couch with little hack. I will focus this tutorial for MongoDB integration, but same methods can be used to ake Etherpad work with other DataBase systems supported by UeberDB.
+By default <a href="https://github.com/ether/etherpad-lite" target="_blank">Etherpad</a> seems to support dirty, postgres, sqlite and mysql databases. But it can also be configured to use with <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> with a little hack. Thanks to <a href="https://github.com/Pita/ueberDB" target="_blank">UeberDB</a>, the database abstraction layer used in Etherpad. This means, it can also be configured to use with level, redis, Cassandra or CouchDB. I will focus this tutorial for MongoDB integration, but same method can be used to make Etherpad work with other DataBase systems (Which are supported by UeberDB).
+
+<p></p>
