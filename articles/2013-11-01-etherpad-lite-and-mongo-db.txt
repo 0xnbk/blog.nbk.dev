@@ -1,0 +1,46 @@
+title: Etherpad Lite & MongoDB
+author: Nikhil Ben Kuruvilla
+date: 2013/11/01
+slug: etherpad-lite-and-mongo-db
+
+By default <a href="https://github.com/ether/etherpad-lite" target="_blank">Etherpad</a> support dirty, postgres, sqlite and mysql databases. But it can also be configured to use with <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> with a little hack. Thanks to <a href="https://github.com/Pita/ueberDB" target="_blank">UeberDB</a>, the database abstraction layer used in Etherpad. This means, it can also be configured to use with level, redis, Cassandra or CouchDB. I will focus this tutorial for MongoDB integration, but same method can be used to make Etherpad work with other DataBase systems (Which are supported by UeberDB).
+<p>
+Change the directory to Etherpad installation, In my case
+</p>
+<pre>
+<code>nikhil@xps:~$ cd etherpad-lite
+</code>
+</pre>
+<p>Open up settings.json with any editor of your choice.</p>
+<pre>
+<code>nikhil@xps:~/etherpad-lite$ gedit settings.json
+</code>
+</pre>
+<p>
+Change database type to "mongodb" and update settings. Make sure you provide the correct user, password, host and port for mongoDB according to your local setup.
+</p>
+<pre>
+<code>
+"dbType" : "mongodb",
+
+"dbSettings" : {
+  "user"    : "user",
+  "host"    : "localhost",
+  "port" : 43348,
+  "password": "password",
+  "dbname": "db_name"
+}
+</code>
+</pre>
+<p>
+Upon running etherpad at this moment, you may encouter an error "cannot find mongodb". You need to install Mongodb using NPM.
+</p>
+<pre>
+<code>nikhil@xps:~/etherpad-lite$ sudo npm install mongodb -g
+</code>
+</pre>
+<p>Thats it. You are done. Now we can run Etherpad by issuing the following command.</p>
+<pre>
+<code>nikhil@xps:~/etherpad-lite$ bin/run.sh
+</code>
+</pre>
