@@ -331,7 +331,7 @@ textarea {
 }
 
 .bs-callout-info {
-    border-left-color: #1B809E;
+    border-left-color: #1B809E!important;
 }
 .bs-callout {
     padding: 20px;
