@@ -78,7 +78,7 @@ header, footer, section, article {
 a, #subscribe a:hover {
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
-  color: black;
+  color: brown;
 }
 a:hover, #subscribe a {
   color: #b83000;
