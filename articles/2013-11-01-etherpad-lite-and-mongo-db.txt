@@ -36,7 +36,7 @@ Change database type to "mongodb" and update settings. Make sure you provide the
 Upon running etherpad at this moment, you may encouter an error "cannot find mongodb". You need to install Mongodb using NPM.
 </p>
 <pre>
-<code>nikhil@xps:~/etherpad-lite$ sudo npm install mongodb -g
+<code>nikhil@xps:~/etherpad-lite$ npm install mongodb
 </code>
 </pre>
 <p>Thats it. You are done. Now we can run Etherpad by issuing the following command.</p>
