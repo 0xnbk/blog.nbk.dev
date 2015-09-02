@@ -4,10 +4,10 @@ date: 2011/08/14
 slug: what-mysql-does-not-tell-you
 
 <p><span>MYSQL can perform silent column changes whenever you CREATE or ALTER a table.These might be changes to a data type, to attributes associated with a data type, or to an index specification. Some notable changes are the following.</span></p>
-<p>1) VARCHAR columns specified less than four characters are silently converted to CHAR<font color="#b83000">&nbsp;[Before MySQL 5.0.3]</font></p>
-<p><br />2) All TIMESTAMP columns are converted to NOT NULL</p>
-<p><br />3) String columns defined with a binary CHARACTER SET are converted to the corresponding binary data type; for example VARCHAR is converted to VARBINARY<font color="#b83000">&nbsp;[Before MySQL 5.0.3]</font></em></p>
-<p><br />4) Columns that are part of a PRIMARY KEY are made NOT NULL even if not declared that way</p>
-<p><br />5) Trailing spaces are automatically deleted from ENUM and SET member values when the table is created</p>
+<div class="bs-callout bs-callout-info">VARCHAR columns specified less than four characters are silently converted to CHAR<font color="#b83000">&nbsp;[Before MySQL 5.0.3]</font></div>>
+<div class="bs-callout bs-callout-info">All TIMESTAMP columns are converted to NOT NULL</div>
+<div class="bs-callout bs-callout-info">String columns defined with a binary CHARACTER SET are converted to the corresponding binary data type; for example VARCHAR is converted to VARBINARY<font color="#b83000">&nbsp;[Before MySQL 5.0.3]</font></em></div>
+<div class="bs-callout bs-callout-info">Columns that are part of a PRIMARY KEY are made NOT NULL even if not declared that way</div>
+<div class="bs-callout bs-callout-info">Trailing spaces are automatically deleted from ENUM and SET member values when the table is created</div>
 <span>Reference: <a href="http://dev.mysql.com/doc/refman/5.6/en/silent-column-changes.html" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/silent-column-changes.html</a></span>
 

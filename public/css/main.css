@@ -78,7 +78,7 @@ header, footer, section, article {
 a, #subscribe a:hover {
   text-decoration: none;
   border-bottom: 1px dotted #bbb;
-  color: black;
+  color: brown;
 }
 a:hover, #subscribe a {
   color: #b83000;
@@ -211,7 +211,6 @@ body > footer {
   text-align: center;
   margin-left: 10px;
   font-size: 14px;
-  color: #bbb;
   line-height: 26px;
 }
 body > footer p {
@@ -329,5 +328,22 @@ textarea {
 }
 .dsq-moderator {
   background: #FFFADB !important;
+}
+
+.bs-callout-info {
+    border-left-color: #1B809E!important;
+}
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0px;
+    border-width: 1px 1px 1px 5px;
+    border-style: solid;
+    border-color: #EEE;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-radius: 3px;
 }
 
