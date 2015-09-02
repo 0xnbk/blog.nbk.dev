@@ -1,0 +1,4 @@
+title: Laravel5 REST API and CORS
+author: Nikhil Ben Kuruvilla
+date: 2015/09/02
+slug: laravel5-rest-api-and-cors
