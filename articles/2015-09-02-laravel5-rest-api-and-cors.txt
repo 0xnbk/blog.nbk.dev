@@ -3,13 +3,14 @@ author: Nikhil Ben Kuruvilla
 date: 2015/09/02
 slug: laravel5-rest-api-and-cors
 
-Have been building a REST API using Laravel 5 as the backend and Backbone as Frontend. One thing that made me stuck is to get the <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" targe=_blank>CORS (Cross-Origin Resource Sharing)</a> working. I couldn't find a clear way to achieve this. I did my research and came to some conclusions. While it's not so hard to implement CORS, finding the ways to implement it may be hard, atleast for me. I will try to explain how I achieved CORS support in my Laravel application.
+Have been building a REST API using Laravel 5 as the backend and Backbone as Frontend. One thing that made me stuck is to get the <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" targe=_blank>CORS (Cross-Origin Resource Sharing)</a> working right. I couldn't find a clear way to achieve this. I did my research and came to some conclusions. While it's not so hard to implement CORS, finding the ways to implement it may be hard, atleast for me. I will try to explain how I achieved CORS support in my Laravel application.
 
 Create a new middleware <code>\app\http\middleware\Cors.php</code> in Laravel by giving the following command
 
 <code>nikhil@xps:~$ php artisan make:middleware Cors</code>
-<div class="bs-callout bs-callout-info"><h4>Inorder for Laravel <code>CSRF</code> token to work, cookies need to be enabled. By default cookies are disabled in CORS. Cookies can be enabled by setting <code>Access-Control-Allow-Credentials</code> header to <code>‘true’</code>.</h4></div>
-Add the following code to the newly created middleware. Please note that inorder for your CSRF token to work, cookie needs to be enabled in the client. By default CORS doesn't enable cookie. This is possible by setting <code>Access-Control-Allow-Credentials</code> header to <code>'true'</code>. (The value 'true' always should be inside quotes, else it will return a value 1 and will be invalidated by the browser).
+
+Add the following code to the newly created middleware.
+
 
 <script src="https://gist.github.com/nikhilben/b155bd939a0bcc745756.js"></script>
 
@@ -20,18 +21,22 @@ Update <code>app\http\kernel.php</code> to include the new middleware. Add <code
 
 <div class="bs-callout bs-callout-info"><h4>Wildcard <code>*</code> will not work in <code>Access-Control-Allow-Origin</code> header if <code>Access-Control-Allow-Credentials</code> header is set to <code>'true'</code></h4></div>
 
-Last, inorder for your CORS to work, you need to add <code>header('Access-Control-Allow-Origin: http://yourclientaddress.com')</code> at the top of your <code>routes.php</code> file. Ofcourse replace <code>http://yourclientaddress.com</code> with whatever is the client address. If you want to allow multiple clients, add it as comma separated values.
+Last, inorder for your CORS to work, you need to add <code>header('Access-Control-Allow-Origin: http://yourclientaddress.com')</code> at the top of your <code>routes.php</code> file. Ofcourse replace <code>http://yourclientaddress.com</code> with whatever is the client address. If you want to allow multiple clients, add it as comma separated values. 
+
+<div class="bs-callout bs-callout-info"><h4>Inorder for Laravel <code>CSRF</code> token to work, cookies need to be enabled. By default cookies are disabled in CORS. Cookies can be enabled by setting <code>Access-Control-Allow-Credentials</code> header to <code>‘true’</code>.</h4></div>
+
+You also need to set <code>Access-Control-Allow-Credentials</code> header to <code>'true'</code> for allowing <code>Cookies</code> to be set in the client. (The value 'true' always should be inside quotes, else it will return a value 1 and will be invalidated by the browser).
 
 <script src="https://gist.github.com/nikhilben/3e662489523a321d0769.js"></script>
 
-<div class="bs-callout bs-callout-info"><h4>Laravel will automatically set <code>CSRF</code> token as a cookie in <code>XSRF-TOKEN</code> variable. This token needs to be send as <code>X-XSRF-TOKEN</code> header (and don't confuse it with <code>X-CSRF-TOKEN</code> header). For some libraries like Angular, this is managed for you automatically.</h4></div>
+<div class="bs-callout bs-callout-info"><h4>Laravel will automatically set <code>CSRF</code> token as a cookie in <code>XSRF-TOKEN</code> variable. This token needs to be send as <code>X-XSRF-TOKEN</code> header (and don't confuse it with <code>X-CSRF-TOKEN</code> header). Actually <code>XSRF-TOKEN</code> is the encrypted form of <code>CSRF</code> token. For some libraries like Angular, this is managed for you automatically.</h4></div>
 
-The Frontend code to manage ajax request will looks like this. You can use the <a href="https://github.com/js-cookie/js-cookie" target="_blank">JsCookies</a> plugin to manage cookies.
+The Frontend code to manage ajax request will looks like this. You can use the <a href="https://github.com/js-cookie/js-cookie" target="_blank">JsCookies</a> plugin to manage cookies. This will automatically send <code>CSRF</code> token on every ajax request to the server (except <code>GET</code>).
 
 <script src="https://gist.github.com/nikhilben/45934f5fa7d56830656c.js"></script>
 
 <strong>Final Thoughts:</strong>
-<p>One downside of CORS is multiple requests to the server. For any request, there will be an <code>OPTIONS</code> request first asking permission from remote server. Once the permission is accepted by returning suitable headers, the original request will be send. This is called as a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests" target="_blank">Preflight</a> request.</p>
+<p>One downside of CORS is multiple requests to the server. For any request, there will be an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests" target="_blank">Preflight</a> request in the form of <code>OPTIONS</code> request asking permission from remote server at first. Once the permission is accepted by returning suitable headers, the original request will be send.
 
 <div class="bs-callout bs-callout-info"><h4>For every CORS request, there will be an additional <code>OPTIONS</code> request asking for suitable permissions from server. This is a big set back while considering performance.</h4></div>
 
@@ -40,7 +45,9 @@ The Frontend code to manage ajax request will looks like this. You can use the <
 <div class="bs-callout bs-callout-info"><h4>Preflight request can be cached by setting <code>Access-Control-Max-Age</code> header. The value of this header allows the preflight response to be cached for a specified number of seconds.</h4></div>
 <p>Although preflight requests can be cached to redue the number of requests, the time it can be cached varies on each browsers. This doesn't eliminate the issue completely, but helps in reducing the impact on performance by using CORS.</p>
 
-I did tried <a href="https://github.com/barryvdh/laravel-cors" target="_blank">https://github.com/barryvdh/laravel-cors</a>. Unfortunately this didn't work for me.
+If you have a better & clean way to handle CORS in Laravel, please let me know. Cheers!
+
+[Note: I have tried <a href="https://github.com/barryvdh/laravel-cors" target="_blank">https://github.com/barryvdh/laravel-cors</a>. Unfortunately this didn't work for me.]
 
 <strong>Further readings:</strong> 
 
