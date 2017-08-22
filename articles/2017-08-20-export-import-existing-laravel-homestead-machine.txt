@@ -1,0 +1,58 @@
+title: Export/Import existing laravel homestead machine
+author: Nikhil Ben Kuruvilla
+date: 2017/08/20
+slug: export-import-existing-laravel-homestead-machine
+
+When you are developing a Laravel application, its always a good idea to use <a href="https://laravel.com/docs/5.4/homestead" target="_blank">Homestead</a>. This article is not a tutorial on how to use Homestead, instead it focusses on exporting and importing an existing Homestead box into another machine. So I assume you are familiar with working with Homestead.
+
+<div class="bs-callout bs-callout-info"><h4><code>Laravel Homestead</code> is an official, pre-packaged <code>Vagrant</code> box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine. No more worrying about messing up your operating system! Vagrant boxes are completely disposable. If something goes wrong, you can destroy and re-create the box in minutes!</h4></div> 
+
+Create a new middleware <code>\app\http\middleware\Cors.php</code> in Laravel by giving the following command
+
+<code>nikhil@xps:~$ php artisan make:middleware Cors</code>
+
+Add the following code to the newly created middleware.
+
+
+<script src="https://gist.github.com/nikhilben/b155bd939a0bcc745756.js"></script>
+
+<div class="bs-callout bs-callout-info"><h4>The <code>Cors</code> middleware should be placed before<code>verifyCsrfToken</code> middleware.</h4></div> 
+Update <code>app\http\kernel.php</code> to include the new middleware. Add <code>\App\Http\Middleware\Cors::class</code> to the <code>$middleware</code> array as shown below.
+
+<script src="https://gist.github.com/nikhilben/926d803ed02e9048fd44.js"></script>
+
+<div class="bs-callout bs-callout-info"><h4>Wildcard <code>*</code> will not work in <code>Access-Control-Allow-Origin</code> header if <code>Access-Control-Allow-Credentials</code> header is set to <code>'true'</code></h4></div>
+
+Last, inorder for your CORS to work, you need to add <code>header('Access-Control-Allow-Origin: http://yourclientaddress.com')</code> at the top of your <code>routes.php</code> file. Ofcourse replace <code>http://yourclientaddress.com</code> with whatever is the client address. If you want to allow multiple clients, add it as comma separated values. 
+
+<div class="bs-callout bs-callout-info"><h4>Inorder for Laravel <code>CSRF</code> token to work, cookies need to be enabled. By default cookies are disabled in CORS. Cookies can be enabled by setting <code>Access-Control-Allow-Credentials</code> header to <code>‘true’</code>.</h4></div>
+
+You also need to set <code>Access-Control-Allow-Credentials</code> header to <code>'true'</code> for allowing <code>Cookies</code> to be set in the client. (The value 'true' always should be inside quotes, else it will return a value 1 and will be invalidated by the browser).
+
+<script src="https://gist.github.com/nikhilben/3e662489523a321d0769.js"></script>
+
+<div class="bs-callout bs-callout-info"><h4>Laravel will automatically set <code>CSRF</code> token as a cookie in <code>XSRF-TOKEN</code> variable. This token needs to be send as <code>X-XSRF-TOKEN</code> header (and don't confuse it with <code>X-CSRF-TOKEN</code> header). Actually <code>XSRF-TOKEN</code> is the encrypted form of <code>CSRF</code> token. For some libraries like Angular, this is managed for you automatically.</h4></div>
+
+The Frontend code to manage ajax request will looks like this. You can use the <a href="https://github.com/js-cookie/js-cookie" target="_blank">JsCookies</a> plugin to manage cookies. This will automatically send <code>CSRF</code> token on every ajax request to the server (except <code>GET</code>).
+
+<script src="https://gist.github.com/nikhilben/45934f5fa7d56830656c.js"></script>
+
+<strong>Final Thoughts:</strong>
+<p>One downside of CORS is multiple requests to the server. For any request, there will be an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests" target="_blank">Preflight</a> request in the form of <code>OPTIONS</code> request asking permission from remote server at first. Once the permission is accepted by returning suitable headers, the original request will be send.
+
+<div class="bs-callout bs-callout-info"><h4>For every CORS request, there will be an additional <code>OPTIONS</code> request asking for suitable permissions from server. This is a big set back while considering performance.</h4></div>
+
+<p>There are several options to bypass this, but most of them will affect the 'REST'ful nature of the application. One thing that can be done to reduce the number of requests is to cache preflight request. I believe w3c will come up with more and better options to handle this scenario, as <code>CORS</code> is still a work in progress!</p>
+
+<div class="bs-callout bs-callout-info"><h4>Preflight request can be cached by setting <code>Access-Control-Max-Age</code> header. The value of this header allows the preflight response to be cached for a specified number of seconds.</h4></div>
+<p>Although preflight requests can be cached to redue the number of requests, the time it can be cached varies on each browsers. This doesn't eliminate the issue completely, but helps in reducing the impact on performance by using CORS.</p>
+
+If you have a better & clean way to handle CORS in Laravel, please let me know. Cheers!
+
+[Note: I have tried <a href="https://github.com/barryvdh/laravel-cors" target="_blank">https://github.com/barryvdh/laravel-cors</a>. Unfortunately this didn't work for me.]
+
+<strong>Further readings:</strong> 
+
+<p><a href="http://www.html5rocks.com/en/tutorials/cors/" target="_blank">http://www.html5rocks.com/en/tutorials/cors/</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS</a></p>
+<p><a href="https://remysharp.com/2011/04/21/getting-cors-working" target="_blank">https://remysharp.com/2011/04/21/getting-cors-working</a></p>
