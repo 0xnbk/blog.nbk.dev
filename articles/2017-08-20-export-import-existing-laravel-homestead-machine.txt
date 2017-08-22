@@ -49,13 +49,15 @@ Run the Homestead script to initialise.
 
 That's it. Now copy the files <code>mynew.box</code>, <code>Homestead.yaml</code> and <code>metadata.json</code> to the <code>Homestead</code> directory of target machine to begin the import
 
-Do the necessary changes to the <code>Homestead.yaml</code> file if necessary.
+Do the necessary changes to the <code>Homestead.yaml</code> file if necessary. A sample <code>Homestead.yaml</code> file can be found below.
+
+<script src="https://gist.github.com/nikhilben/ef211ee3568dc7543aa390d7c8d3810c.js"></script>
 
 Now finally to import the box, run the following command.
 
 <pre>demo@xps:~/Homestead$ vagrant box add metadata.json</pre>
 
-<div class="bs-callout bs-callout-info"><h4>note that we are adding <code>metadata.josn</code> and not <code>mynew.box</code>. This is important, else <code>Homestead</code> will try to download the latest version from internet than using the local copy.</h4></div> 
+<div class="bs-callout bs-callout-info"><h4>note that we are adding <code>metadata.josn</code> and not <code>mynew.box</code>. This is important, else <code>Homestead</code> will try to download the latest version from internet than using the local copy. Because the box was added manually. The box metadata was not available and by default it will set the version to 0.</h4></div> 
 
 <div class="bs-callout bs-callout-info"><h4>Also note that while most of the configurations in the exported machine will remain same, some configurations like changes done to <code>nginx</code> files will be overwritten in the imported machine.</h4></div> 
 
