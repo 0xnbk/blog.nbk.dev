@@ -15,5 +15,5 @@ slug: duckduckgo-search-chrome-extension
 
 <span>Download DuckDuckGo Google Chrome extension <a href="https://github.com/nikhilben/DuckDuckGo" target="_blank">here</a></span>
 
-<span><strong>[UPDATE: This extension is no more developed or supported. Please use the official <a href="" target="_blank">Duckduckgo Chrome Extension</a>]</strong></span>
+<span><strong>[UPDATE: This extension is no more developed or supported. Please use the official <a href="https://github.com/duckduckgo/chrome-zeroclickinfo" target="_blank">Duckduckgo Chrome Extension</a>]</strong></span>
 
