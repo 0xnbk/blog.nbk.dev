@@ -7,52 +7,55 @@ When you are developing a Laravel application, its always a good idea to use <a 
 
 <div class="bs-callout bs-callout-info"><h4><code>Laravel Homestead</code> is an official, pre-packaged <code>Vagrant</code> box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine. No more worrying about messing up your operating system! Vagrant boxes are completely disposable. If something goes wrong, you can destroy and re-create the box in minutes!</h4></div> 
 
-Create a new middleware <code>\app\http\middleware\Cors.php</code> in Laravel by giving the following command
+Now I will go through various steps involved in exporting a Homestead machine. First step is to make sure you are in the <code>Homestead</code> directory.
 
-<code>nikhil@xps:~$ php artisan make:middleware Cors</code>
+<pre>nikhil@xps:~$ cd Homestead</pre>
 
-Add the following code to the newly created middleware.
+Now package the existing box by issuing the following command.
 
+<pre>nikhil@xps:~/Homestead$ vagrant package --output mynew.box</pre>
 
-<script src="https://gist.github.com/nikhilben/b155bd939a0bcc745756.js"></script>
+This will create a new file <code>mynew.box</code> in the <code>Homestead</code> directory. Depending on the size of the machine and the your ssytem configuration this could take a few minutes to generate the file.
 
-<div class="bs-callout bs-callout-info"><h4>The <code>Cors</code> middleware should be placed before<code>verifyCsrfToken</code> middleware.</h4></div> 
-Update <code>app\http\kernel.php</code> to include the new middleware. Add <code>\App\Http\Middleware\Cors::class</code> to the <code>$middleware</code> array as shown below.
+Now create a new file <code>metadata.json</code> and place the following content into it. 
 
-<script src="https://gist.github.com/nikhilben/926d803ed02e9048fd44.js"></script>
+<script src="https://gist.github.com/nikhilben/4cb9e2924effcdd9a29cbed52f8406a3.js"></script>
 
-<div class="bs-callout bs-callout-info"><h4>Wildcard <code>*</code> will not work in <code>Access-Control-Allow-Origin</code> header if <code>Access-Control-Allow-Credentials</code> header is set to <code>'true'</code></h4></div>
+The above file tells vagrant that the name of the box is <code>laravel/homestead</code> and while importing the box in another machine, homestead will use this local machine than downloading an entire new machine. More on this will follows.
+Alos note the <code>version</code> parameter. The value of the <code>version</code> can be obtained by issuing the following command
 
-Last, inorder for your CORS to work, you need to add <code>header('Access-Control-Allow-Origin: http://yourclientaddress.com')</code> at the top of your <code>routes.php</code> file. Ofcourse replace <code>http://yourclientaddress.com</code> with whatever is the client address. If you want to allow multiple clients, add it as comma separated values. 
+<pre>nikhil@xps:~/Homestead$ vagrant box list
+laravel/homestead      (virtualbox, 3.0.0)
+puphpet/ubuntu1404-x64 (virtualbox, 20161102)
+</pre>
 
-<div class="bs-callout bs-callout-info"><h4>Inorder for Laravel <code>CSRF</code> token to work, cookies need to be enabled. By default cookies are disabled in CORS. Cookies can be enabled by setting <code>Access-Control-Allow-Credentials</code> header to <code>‘true’</code>.</h4></div>
+Notice the number <code>3.0.0</code> in the first line of the output.
 
-You also need to set <code>Access-Control-Allow-Credentials</code> header to <code>'true'</code> for allowing <code>Cookies</code> to be set in the client. (The value 'true' always should be inside quotes, else it will return a value 1 and will be invalidated by the browser).
+Now in your target machine, If Homestead is not installed, install it by using the following command.
 
-<script src="https://gist.github.com/nikhilben/3e662489523a321d0769.js"></script>
+<pre>demo@xps:~$ git clone https://github.com/laravel/homestead.git Homestead</pre>
 
-<div class="bs-callout bs-callout-info"><h4>Laravel will automatically set <code>CSRF</code> token as a cookie in <code>XSRF-TOKEN</code> variable. This token needs to be send as <code>X-XSRF-TOKEN</code> header (and don't confuse it with <code>X-CSRF-TOKEN</code> header). Actually <code>XSRF-TOKEN</code> is the encrypted form of <code>CSRF</code> token. For some libraries like Angular, this is managed for you automatically.</h4></div>
+Change directory to <code>homestead</code>.
 
-The Frontend code to manage ajax request will looks like this. You can use the <a href="https://github.com/js-cookie/js-cookie" target="_blank">JsCookies</a> plugin to manage cookies. This will automatically send <code>CSRF</code> token on every ajax request to the server (except <code>GET</code>).
+<pre>demo@xps:~$ cd Homestead</pre>
 
-<script src="https://gist.github.com/nikhilben/45934f5fa7d56830656c.js"></script>
+Checkout to the latest version. As the time of the writing, <code>v6.0.1</code> was the latest version.
 
-<strong>Final Thoughts:</strong>
-<p>One downside of CORS is multiple requests to the server. For any request, there will be an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests" target="_blank">Preflight</a> request in the form of <code>OPTIONS</code> request asking permission from remote server at first. Once the permission is accepted by returning suitable headers, the original request will be send.
+<pre>demo@xps:~/Homestead$ git checkout v6.0.1</pre>
 
-<div class="bs-callout bs-callout-info"><h4>For every CORS request, there will be an additional <code>OPTIONS</code> request asking for suitable permissions from server. This is a big set back while considering performance.</h4></div>
+Run the Homestead script to initialise.
 
-<p>There are several options to bypass this, but most of them will affect the 'REST'ful nature of the application. One thing that can be done to reduce the number of requests is to cache preflight request. I believe w3c will come up with more and better options to handle this scenario, as <code>CORS</code> is still a work in progress!</p>
+<pre>demo@xps:~/Homestead$ bash init.sh</pre>
 
-<div class="bs-callout bs-callout-info"><h4>Preflight request can be cached by setting <code>Access-Control-Max-Age</code> header. The value of this header allows the preflight response to be cached for a specified number of seconds.</h4></div>
-<p>Although preflight requests can be cached to redue the number of requests, the time it can be cached varies on each browsers. This doesn't eliminate the issue completely, but helps in reducing the impact on performance by using CORS.</p>
+That's it. Now copy the files <code>mynew.box</code>, <code>Homestead.yaml</code> and <code>metadata.json</code> to the <code>Homestead</code> directory of target machine to begin the import
 
-If you have a better & clean way to handle CORS in Laravel, please let me know. Cheers!
+Do the necessary changes to the <code>Homestead.yaml</code> file if necessary.
 
-[Note: I have tried <a href="https://github.com/barryvdh/laravel-cors" target="_blank">https://github.com/barryvdh/laravel-cors</a>. Unfortunately this didn't work for me.]
+Now finally to import the box, run the following command.
 
-<strong>Further readings:</strong> 
+<pre>demo@xps:~/Homestead$ vagrant box add metadata.json</pre>
 
-<p><a href="http://www.html5rocks.com/en/tutorials/cors/" target="_blank">http://www.html5rocks.com/en/tutorials/cors/</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS</a></p>
-<p><a href="https://remysharp.com/2011/04/21/getting-cors-working" target="_blank">https://remysharp.com/2011/04/21/getting-cors-working</a></p>
+<div class="bs-callout bs-callout-info"><h4>note that we are adding <code>metadata.josn</code> and not <code>mynew.box</code>. This is important, else <code>Homestead</code> will try to download the latest version from internet than using the local copy.</h4></div> 
+
+<div class="bs-callout bs-callout-info"><h4>Also note that while most of the configurations in the exported machine will remain same, some configurations like changes done to <code>nginx</code> files will be overwritten in the imported machine.</h4></div> 
+
