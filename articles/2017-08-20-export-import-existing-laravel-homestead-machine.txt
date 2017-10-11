@@ -31,7 +31,7 @@ puphpet/ubuntu1404-x64 (virtualbox, 20161102)
 
 Notice the number <code>3.0.0</code> in the first line of the output. This should be the value of the <code>version</code> parameter in the above <code>metadata.json</code> file.
 
-Now you have successfully exported an existing <code>Homestead</code> machine, it is time to import the box into another machine. First step to do in your target machine is to install <code>Homestead</code>. You can use the following command to install <code>Homestead</code>. Of course you can skip this step if <code>Homestead</code> is already installed.
+Now you have successfully exported an existing <code>Homestead</code> machine, it is time to import the box into another machine. Make sure you have installed <a href="https://www.vagrantup.com/downloads.html" _target="blank">Vagrant</a> in the target machine. You can use the following command to install <code>Homestead</code> in your target machine if not installed already.
 
 <pre>demo@xps:~$ git clone https://github.com/laravel/homestead.git Homestead</pre>
 
