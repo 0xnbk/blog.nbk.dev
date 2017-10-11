@@ -3,43 +3,43 @@ author: Nikhil Ben Kuruvilla
 date: 2017/08/20
 slug: export-import-existing-laravel-homestead-machine
 
-When you are developing a Laravel application, its always a good idea to use <a href="https://laravel.com/docs/5.4/homestead" target="_blank">Homestead</a>. This article is not a tutorial on how to use Homestead, instead it focusses on exporting and importing an existing Homestead box into another machine. So I assume you are familiar with working with Homestead.
+When you are developing Laravel application, its always a good idea to use <a href="https://laravel.com/docs/5.4/homestead" target="_blank">Homestead</a>. This will make it easy to focus on your development rather than spending time in preparing the development environment & dependencies. This article is not a tutorial on how to use Homestead, instead it focusses on exporting and importing an existing Homestead box into another machine. So I assume that you are already familiar in working with Homestead.
 
 <div class="bs-callout bs-callout-info"><h4><code>Laravel Homestead</code> is an official, pre-packaged <code>Vagrant</code> box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine. No more worrying about messing up your operating system! Vagrant boxes are completely disposable. If something goes wrong, you can destroy and re-create the box in minutes!</h4></div> 
 
-Now I will go through various steps involved in exporting a Homestead machine. First step is to make sure you are in the <code>Homestead</code> directory.
+Now you are already good with running Homestead box and need to export this (probably for a new colleague that joined your team or to use in your home system?). I will go through various steps involved in exporting a Homestead machine. First step is to make sure you are in the <code>Homestead</code> directory.
 
 <pre>nikhil@xps:~$ cd Homestead</pre>
 
-Now package the existing box by issuing the following command.
+Now package the existing box by running the following command.
 
 <pre>nikhil@xps:~/Homestead$ vagrant package --output mynew.box</pre>
 
-This will create a new file <code>mynew.box</code> in the <code>Homestead</code> directory. Depending on the size of the machine and the your ssytem configuration this could take a few minutes to generate the file.
+This will create a new file <code>mynew.box</code> in the <code>Homestead</code> directory. Depending on the size of the machine and the system configuration this could take a few minutes to generate the file.
 
-Now create a new file <code>metadata.json</code> and place the following content into it. 
+Now create a new file <code>metadata.json</code> (in the same 'Homestead' directory) and place the following content into it. 
 
 <script src="https://gist.github.com/nikhilben/4cb9e2924effcdd9a29cbed52f8406a3.js"></script>
 
-The above file tells vagrant that the name of the box is <code>laravel/homestead</code> and while importing the box in another machine, homestead will use this local machine than downloading an entire new machine. More on this will follows.
-Alos note the <code>version</code> parameter. The value of the <code>version</code> can be obtained by issuing the following command
+The above file tells vagrant that the name of the box is <code>laravel/homestead</code> and while importing the box in another machine, homestead will use this local machine than downloading an entire new machine. More on this will follow.
+Also note the <code>version</code> parameter. The value of the <code>version</code> can be obtained by running the following command
 
 <pre>nikhil@xps:~/Homestead$ vagrant box list
 laravel/homestead      (virtualbox, 3.0.0)
 puphpet/ubuntu1404-x64 (virtualbox, 20161102)
 </pre>
 
-Notice the number <code>3.0.0</code> in the first line of the output.
+Notice the number <code>3.0.0</code> in the first line of the output. This should be the value of the <code>version</code> parameter in the above <code>metadata.json</code> file.
 
-Now in your target machine, If Homestead is not installed, install it by using the following command.
+Now you have successfully exported an existing <code>Homestead</code> machine, it is time to import the box into another machine. First step to do in your target machine is to install <code>Homestead</code>. You can use the following command to install <code>Homestead</code>. Of course you can skip this step if <code>Homestead</code> is already installed.
 
 <pre>demo@xps:~$ git clone https://github.com/laravel/homestead.git Homestead</pre>
 
-Change directory to <code>homestead</code>.
+Change directory to <code>Homestead</code>.
 
 <pre>demo@xps:~$ cd Homestead</pre>
 
-Checkout to the latest version. As the time of the writing, <code>v6.0.1</code> was the latest version.
+Checkout to the latest version. At the time of the writing, <code>v6.0.1</code> is the latest version.
 
 <pre>demo@xps:~/Homestead$ git checkout v6.0.1</pre>
 
@@ -47,17 +47,26 @@ Run the Homestead script to initialise.
 
 <pre>demo@xps:~/Homestead$ bash init.sh</pre>
 
-That's it. Now copy the files <code>mynew.box</code>, <code>Homestead.yaml</code> and <code>metadata.json</code> to the <code>Homestead</code> directory of target machine to begin the import
+<div class="bs-callout bs-callout-info"><h4><code>NOTE:</code> In windows machine you may need to run <code>init.bat</code> by double clicking that file, in order to initialize <code>Homestead</code>.</h4></div> 
 
-Do the necessary changes to the <code>Homestead.yaml</code> file if necessary. A sample <code>Homestead.yaml</code> file can be found below.
+That's it. Now copy the files <code>mynew.box</code>, <code>Homestead.yaml</code> and <code>metadata.json</code> (from the <code>Homestead</code> directory of the parent machine) to the <code>Homestead</code> directory of target machine to begin the import.
+
+Do the necessary changes to the <code>Homestead.yaml</code> file if needed. A sample <code>Homestead.yaml</code> file can be found below.
 
 <script src="https://gist.github.com/nikhilben/ef211ee3568dc7543aa390d7c8d3810c.js"></script>
 
-Now finally to import the box, run the following command.
+Now finally to import the box, run the following command in the <code>Homestead</code> directory of the target machine.
 
 <pre>demo@xps:~/Homestead$ vagrant box add metadata.json</pre>
 
-<div class="bs-callout bs-callout-info"><h4>note that we are adding <code>metadata.josn</code> and not <code>mynew.box</code>. This is important, else <code>Homestead</code> will try to download the latest version from internet than using the local copy. Because the box was added manually. The box metadata was not available and by default it will set the version to 0.</h4></div> 
+<div class="bs-callout bs-callout-info"><h4>Note that we are adding <code>metadata.josn</code> and not <code>mynew.box</code> in the above command. This is important, else <code>Homestead</code> will try to download the latest version from internet than using the local copy. It may also set the box <code>metadata</code> version to <code>0</code> and cause more troubles in the future. So using <code>metadata.json</code> for import could prevent all this together!</h4></div> 
+
+Now it's time to run the imported <code>Homestead</code> machine. Happy Coding! 
+<pre>demo@xps:~/Homestead$ vagrant up</pre>
+
+If everything goes fine and you see no errors, then congrats! You have successfully imported <code>Homestead</code> machine to a new system. You may need to change some values like <code>nginx</code> configuration in the new machine manually as this will be overwritten at the time of import.
 
 <div class="bs-callout bs-callout-info"><h4>Also note that while most of the configurations in the exported machine will remain same, some configurations like changes done to <code>nginx</code> files will be overwritten in the imported machine.</h4></div> 
+
+The whole tutorial is focused on running <code>Homestead</code> in <code>Linux</code>. However the same also should work in any <code>Mac</code> system. You could also use this tutorial concept to Export/Import <code>Homestead</code> machine in <code>Windows</code> system with little adjustments. Let me know what you have to say through the comment section below.
 
