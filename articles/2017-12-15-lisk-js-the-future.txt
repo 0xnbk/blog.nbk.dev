@@ -41,19 +41,19 @@ Lisk is also designed with the intention of facilitating the trends, allowing up
 
 <div class="bs-callout bs-callout-info"><h4><code>Lisk</code> aims to simplify the development process, thus reducing the current technical barriers to entry. Lisk makes access to Blockchain intelligible technology allowing developers to unleash the potential of this revolutionary technology. Developers using the Lisk platform will be among the first designers of blockchain applications, thus positioning themselves at the forefront of one of the fastest growing industries in the world.</h4></div> 
 
-<strong>Some key features unique to Lisk are:</strong>
-
-- <code>Blockchain Applications: </code>Lisk will be the platform in which block chain applications will be deployed. Since each application will have its own side chain and run on the block chain, applications will have <code>100% uptime</code>. This means applications will be decentralized, thus protecting users from centralization and abuse of power and be always available. Apps developed on the Lisk Platform will be listed on the Lisk App Directory, so that they can be easily accessible. The Lisk team is planning to have a collection of apps ranging from games, productivity tools, financial applications, and more. 
-
-- <code>Sidechains: </code>Lisk’s applications will run on their own customizable side chain and with full customization under the reins of the developer. Sidechains are essential because spreads the load away from Lisk’s main chain and keep the main networking lean, efficient, and fast.
-
-- <code>Security: </code>Lisk is secured with dual pass phrases which requires both to be entered prior to any transaction. This is to add an additional layer of protection. Furthermore, Lisk also features multi-signature groups which will require signatures and authorization from up to 16 different accounts prior to authorization.
-
-- <code>Simplicity: </code>The Lisk team believes in a simplistic, minimalistic, yet powerful experience. As lisk is based on javascript, the familiarity of the language will make  the development fairly simple and easy to the developers.
-
 <strong>Sample Code:</strong>
 
 <script src="https://gist.github.com/nikhilben/0f15e963fe9e376bbd1706bfef34cfc9.js"></script>
+
+<strong>Some key features unique to Lisk are:</strong>
+
+<code><strong>Blockchain Applications: </strong></code>Lisk will be the platform in which block chain applications will be deployed. Since each application will have its own side chain and run on the block chain, applications will have <code>100% uptime</code>. This means applications will be decentralized, thus protecting users from centralization and abuse of power and be always available. Apps developed on the Lisk Platform will be listed on the Lisk App Directory, so that they can be easily accessible. The Lisk team is planning to have a collection of apps ranging from games, productivity tools, financial applications, and more. 
+
+<code><strong>Sidechains: </strong></code>Lisk’s applications will run on their own customizable side chain and with full customization under the reins of the developer. Sidechains are essential because spreads the load away from Lisk’s main chain and keep the main networking lean, efficient, and fast.
+
+<code><strong>Security: </strong></code>Lisk is secured with dual pass phrases which requires both to be entered prior to any transaction. This is to add an additional layer of protection. Furthermore, Lisk also features multi-signature groups which will require signatures and authorization from up to 16 different accounts prior to authorization.
+
+<code><strong>Simplicity: </strong></code>The Lisk team believes in a simplistic, minimalistic, yet powerful experience. As lisk is based on javascript, the familiarity of the language will make  the development fairly simple and easy to the developers.
 
 <strong>Lisk Components</strong>
 
