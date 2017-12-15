@@ -5,7 +5,7 @@ slug: lisk-js-the-future
 
 We hear a lot of buzz around bitcoin and blockchain technology each day. The blockchain is an undeniably ingenious invention – the brainchild of a person or group of people known by the pseudonym, <a href="https://en.wikipedia.org/wiki/Satoshi_Nakamoto" target="_blank">Satoshi Nakamoto</a>. But since then, it has evolved into something greater. But what exactly is this 'blockchain  technology' and what has it got to do with <a href="https://lisk.io/" target="_blank">Lisk Js</a>? Well, let's find out..
 
-<div class="bs-callout bs-callout-info"><h4><code>Lisk JS</code> is a JavaScript library for <code>Lisk</code>: a next-generation blockchain platform that allows the development and distribution of Javascript based decentralized applications using an easy to use, fully featured ecosystem. Through Lisk, developers can build, publish, distribute, and monetize their applications within a custom built cryptocurrency powered system that utilizes custom blockchains, smart contracts, cloud storage, and computing nodes; all from within one industry solution.</h4></div> 
+<div class="bs-callout bs-callout-info"><h4><code>Lisk JS</code> is a JavaScript library for Lisk: a next-generation blockchain platform that allows the development and distribution of Javascript based decentralized applications using an easy to use, fully featured ecosystem. Through Lisk, developers can build, publish, distribute, and monetize their applications within a custom built cryptocurrency powered system that utilizes custom blockchains, smart contracts, cloud storage, and computing nodes; all from within one industry solution.</h4></div> 
 
 Now that we've come across a lot of weird words, let's break it down.
 
@@ -13,7 +13,7 @@ Now that we've come across a lot of weird words, let's break it down.
 
 Blockchain technology has the ability to transform our daily lives across multiple verticals. Technology applications that we have become accustomed to using such as social networks, gaming platforms and financial applications can all be improved upon using blockchain technology. The end user may not notice any superficial change but will benefit from efficiencies created through decentralized applications. The efficiencies will come in the form of speed, security and the removal of unnecessary third parties, as well as decreasing associated third party fees.
 
-With blockchain, we will become more educated on the goods and services we purchase and how we engage with our surroundings, for example, we will know exactly where the food we buy comes from; we will be fully in control of our data on social media accounts and the technology will also free us from time constraints enabling 24/7 transactions and engagements.
+<div class="bs-callout bs-callout-info"><h4>With blockchain, we will become more educated on the goods and services we purchase and how we engage with our surroundings, for example, we will know exactly where the food we buy comes from; we will be fully in control of our data on social media accounts and the technology will also free us from time constraints enabling 24/7 transactions and engagements.</h4></div> 
 
 By allowing digital information to be distributed but not copied, blockchain technology created the backbone of a new type of internet. Originally devised for the digital currency, Bitcoin, the tech community is now finding other potential uses for the technology.
 
@@ -21,7 +21,7 @@ By allowing digital information to be distributed but not copied, blockchain tec
 
 Picture a spreadsheet that is duplicated thousands of times across a network of computers. Then imagine that this network is designed to regularly update this spreadsheet and you have a basic understanding of the blockchain.
 
-Information held on a blockchain exists as a shared and continually reconciled database. This is a way of using the network that has obvious benefits. The blockchain database isn’t stored in any single location, meaning the records it keeps are truly public and easily verifiable. No centralized version of this information exists for a hacker to corrupt. Hosted by millions of computers simultaneously, its data is accessible to anyone on the internet.
+<div class="bs-callout bs-callout-info"><h4>Information held on a blockchain exists as a shared and continually reconciled database. This is a way of using the network that has obvious benefits. The blockchain database isn’t stored in any single location, meaning the records it keeps are truly public and easily verifiable. No centralized version of this information exists for a hacker to corrupt. Hosted by millions of computers simultaneously, its data is accessible to anyone on the internet.</h4></div> 
 
 The blockchain network lives in a state of consensus, one that automatically checks in with itself every x minutes. A kind of self-auditing ecosystem of a digital value, the network reconciles every transaction that happens in x-minute intervals. Each group of these transactions is referred to as a “block”. Two important properties result from this:
 
@@ -57,12 +57,12 @@ Lisk is also designed with the intention of facilitating the trends, allowing up
 
 <strong>Lisk Components</strong>
 
-* Decentralized P2P hosting of dapps
-* Decentralized P2P storage for dapps
-* Decentralized computing
-* Sidechain consensus for every dapp
-* Lisk and Bitcoin API interfaces
-* Developer tools: Lisk CLI / Lisk Dapp SDK
+<h4>Decentralized P2P hosting of dapps</h4>
+<h4>Decentralized P2P storage for dapps</h4>
+<h4>Decentralized computing</h4>
+<h4>Sidechain consensus for every dapp</h4>
+<h4>Lisk and Bitcoin API interfaces</h4>
+<h4>Developer tools: Lisk CLI / Lisk Dapp SDK</h4>
 
 <strong>Moving Forward</strong>
 
