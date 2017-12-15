@@ -57,19 +57,17 @@ Lisk is also designed with the intention of facilitating the trends, allowing up
 
 <strong>Lisk Components</strong>
 
-<pre>
-* Decentralized P2P hosting of dapps
+<code>* Decentralized P2P hosting of dapps</code>
 
-* Decentralized P2P storage for dapps
+<code>* Decentralized P2P storage for dapps</code>
 
-* Decentralized computing
+<code>* Decentralized computing</code>
 
-* Sidechain consensus for every dapp
+<code>* Sidechain consensus for every dapp</code>
 
-* Lisk and Bitcoin API interfaces
+<code>* Lisk and Bitcoin API interfaces</code>
 
-* Developer tools: Lisk CLI / Lisk Dapp SDK
-</pre>
+<code>* Developer tools: Lisk CLI / Lisk Dapp SDK</code>
 
 <strong>Moving Forward</strong>
 
