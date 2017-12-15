@@ -3,7 +3,7 @@ author: Nikhil Ben Kuruvilla
 date: 2017/12/15
 slug: lisk-js-the-future
 
-We hear a lot of buzz around bitcoin and blockchain technology each day. The blockchain is an undeniably ingenious invention – the brainchild of a person or group of people known by the pseudonym, <a href="https://en.wikipedia.org/wiki/Satoshi_Nakamoto" target="_blank">Satoshi Nakamoto</a>. But since then, it has evolved into something greater. But what exactly is this 'blockchain  technology' and what has it got to do with Lisk Js? Well, let's find out..
+We hear a lot of buzz around bitcoin and blockchain technology each day. The blockchain is an undeniably ingenious invention – the brainchild of a person or group of people known by the pseudonym, <a href="https://en.wikipedia.org/wiki/Satoshi_Nakamoto" target="_blank">Satoshi Nakamoto</a>. But since then, it has evolved into something greater. But what exactly is this 'blockchain  technology' and what has it got to do with <a href="https://lisk.io/" target="_blank">Lisk Js</a>? Well, let's find out..
 
 <div class="bs-callout bs-callout-info"><h4><code>Lisk JS</code> is a JavaScript library for <code>Lisk</code>: a next-generation blockchain platform that allows the development and distribution of Javascript based decentralized applications using an easy to use, fully featured ecosystem. Through Lisk, developers can build, publish, distribute, and monetize their applications within a custom built cryptocurrency powered system that utilizes custom blockchains, smart contracts, cloud storage, and computing nodes; all from within one industry solution.</h4></div> 
 
@@ -57,12 +57,12 @@ Lisk is also designed with the intention of facilitating the trends, allowing up
 
 <strong>Lisk Components</strong>
 
-1. Decentralized P2P hosting of dapps
-2. Decentralized P2P storage for dapps
-3. Decentralized computing
-4. Sidechain consensus for every dapp
-5. Lisk and Bitcoin API interfaces
-6. Developer tools: Lisk CLI / Lisk Dapp SDK
+* Decentralized P2P hosting of dapps
+* Decentralized P2P storage for dapps
+* Decentralized computing
+* Sidechain consensus for every dapp
+* Lisk and Bitcoin API interfaces
+* Developer tools: Lisk CLI / Lisk Dapp SDK
 
 <strong>Moving Forward</strong>
 
