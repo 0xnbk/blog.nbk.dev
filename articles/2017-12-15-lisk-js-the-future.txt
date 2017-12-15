@@ -1,0 +1,71 @@
+title: Lisk JS - The Future?
+author: Nikhil Ben Kuruvilla
+date: 2017/12/15
+slug: lisk-js-the-future
+
+We hear a lot of buzz around bitcoin and blockchain technology each day. The blockchain is an undeniably ingenious invention – the brainchild of a person or group of people known by the pseudonym, <a href="https://en.wikipedia.org/wiki/Satoshi_Nakamoto" target="_blank">Satoshi Nakamoto</a>. But since then, it has evolved into something greater. But what exactly is this 'blockchain  technology' and what has it got to do with Lisk Js? Well, let's find out..
+
+<div class="bs-callout bs-callout-info"><h4><code>Lisk JS</code> is a JavaScript library for <code>Lisk</code>: a next-generation blockchain platform that allows the development and distribution of Javascript based decentralized applications using an easy to use, fully featured ecosystem. Through Lisk, developers can build, publish, distribute, and monetize their applications within a custom built cryptocurrency powered system that utilizes custom blockchains, smart contracts, cloud storage, and computing nodes; all from within one industry solution.</h4></div> 
+
+Now that we've come across a lot of weird words, let's break it down.
+
+<strong>The Blockchain Technology & Decentralized Applications</strong>
+
+Blockchain technology has the ability to transform our daily lives across multiple verticals. Technology applications that we have become accustomed to using such as social networks, gaming platforms and financial applications can all be improved upon using blockchain technology. The end user may not notice any superficial change but will benefit from efficiencies created through decentralized applications. The efficiencies will come in the form of speed, security and the removal of unnecessary third parties, as well as decreasing associated third party fees.
+
+With blockchain, we will become more educated on the goods and services we purchase and how we engage with our surroundings, for example, we will know exactly where the food we buy comes from; we will be fully in control of our data on social media accounts and the technology will also free us from time constraints enabling 24/7 transactions and engagements.
+
+By allowing digital information to be distributed but not copied, blockchain technology created the backbone of a new type of internet. Originally devised for the digital currency, Bitcoin, the tech community is now finding other potential uses for the technology.
+
+<strong>What is blockchain?</strong>
+
+Picture a spreadsheet that is duplicated thousands of times across a network of computers. Then imagine that this network is designed to regularly update this spreadsheet and you have a basic understanding of the blockchain.
+
+Information held on a blockchain exists as a shared and continually reconciled database. This is a way of using the network that has obvious benefits. The blockchain database isn’t stored in any single location, meaning the records it keeps are truly public and easily verifiable. No centralized version of this information exists for a hacker to corrupt. Hosted by millions of computers simultaneously, its data is accessible to anyone on the internet.
+
+The blockchain network lives in a state of consensus, one that automatically checks in with itself every x minutes. A kind of self-auditing ecosystem of a digital value, the network reconciles every transaction that happens in x-minute intervals. Each group of these transactions is referred to as a “block”. Two important properties result from this:
+
+<code>Transparency:</code> Data is embedded within the network as a whole, by definition it is public.
+
+<code>It cannot be corrupted:</code> Altering any unit of information on the blockchain would mean using a huge amount of computing power to override the entire network.
+
+These features provide a starting point for building a new type of software called <code>decentralized applications</code>, or <code>dapps</code>. DApp is an <code>open-source</code> and autonomous software platform implemented on <code>decentralized</code> blockchains with no single body holding token majority and changes being executed by consensus and are fueled using <code>tokens</code> which are generated using a <code>protocol/algorithm</code> cryptographically stored in a blockchain. Dapps are just now gaining media coverage but will someday become more widely used than the world’s most popular web apps. They are more flexible, transparent, distributed, resilient, and have a better incentivized structure than current software models. 
+
+<div class="bs-callout bs-callout-info"><h4><code>Lisk</code> is a platform that enables its users to build such applications (DApps) from the ground up in JavaScript.</h4></div> 
+
+<strong>Lisk Overview</strong>
+
+Lisk is the first decentralized application solution written entirely in Node.js. Javascript is an already existing and simplistic language which is in widespread use, thus making Lisk ideal to achieve widespread adoption by developers.
+
+Lisk is also designed with the intention of facilitating the trends, allowing up and coming projects, seeking funding, to conduct ICOs on the blockchain network. The project incorporates all aspects of existing blockchain projects such as decentralized storage on a standalone blockchain, anonymous transactions and a social blogging system.
+
+<div class="bs-callout bs-callout-info"><h4><code>Lisk</code> aims to simplify the development process, thus reducing the current technical barriers to entry. Lisk makes access to Blockchain intelligible technology allowing developers to unleash the potential of this revolutionary technology. Developers using the Lisk platform will be among the first designers of blockchain applications, thus positioning themselves at the forefront of one of the fastest growing industries in the world.</h4></div> 
+
+<strong>Some key features unique to Lisk are:</strong>
+
+- <code>Blockchain Applications: </code>Lisk will be the platform in which block chain applications will be deployed. Since each application will have its own side chain and run on the block chain, applications will have <code>100% uptime</code>. This means applications will be decentralized, thus protecting users from centralization and abuse of power and be always available. Apps developed on the Lisk Platform will be listed on the Lisk App Directory, so that they can be easily accessible. The Lisk team is planning to have a collection of apps ranging from games, productivity tools, financial applications, and more. 
+
+- <code>Sidechains: </code>Lisk’s applications will run on their own customizable side chain and with full customization under the reins of the developer. Sidechains are essential because spreads the load away from Lisk’s main chain and keep the main networking lean, efficient, and fast.
+
+- <code>Security: </code>Lisk is secured with dual pass phrases which requires both to be entered prior to any transaction. This is to add an additional layer of protection. Furthermore, Lisk also features multi-signature groups which will require signatures and authorization from up to 16 different accounts prior to authorization.
+
+- <code>Simplicity: </code>The Lisk team believes in a simplistic, minimalistic, yet powerful experience. As lisk is based on javascript, the familiarity of the language will make  the development fairly simple and easy to the developers.
+
+<strong>Sample Code:</strong>
+
+<script src="https://gist.github.com/nikhilben/0f15e963fe9e376bbd1706bfef34cfc9.js"></script>
+
+<strong>Lisk Components</strong>
+
+1. Decentralized P2P hosting of dapps
+2. Decentralized P2P storage for dapps
+3. Decentralized computing
+4. Sidechain consensus for every dapp
+5. Lisk and Bitcoin API interfaces
+6. Developer tools: Lisk CLI / Lisk Dapp SDK
+
+<strong>Moving Forward</strong>
+
+Lisk has been a very popular name in the crypto world since its announcement. It went through many ups and downs since then. The team is all set for a rebranding and SDK release on Q1 2018 which will give other similiar platforms such as Ethereum and Stratis a tough competetion.
+
+We are bound to see penetration of decentralization in industries or networks including, but not limited to, finance, media, government (voting), marketing, healthcare, insurance, and real-estate. Although it may be years, even decades, before we see prominently centralized systems fully embrace decentralized alternatives, the momentum behind current initiatives seems to indicate a promising future for scalable adoption. When this happen, Lisk is unarguably going to be at the helm of future application development.
