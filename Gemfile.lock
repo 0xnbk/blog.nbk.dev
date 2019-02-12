@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     builder (3.2.2)
-    rack (1.6.0)
+    rack (1.6.11)
     rdiscount (2.1.7.1)
     toto (0.4.9)
       builder
