@@ -1,0 +1,5 @@
+title: What every web developer should know about console
+author: Nikhil Ben Kuruvilla
+date: 2019/02/19
+slug: what-every-webdeveloper-should-know-about-console
+
