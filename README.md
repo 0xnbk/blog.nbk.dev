@@ -4,12 +4,12 @@ blog.nikhilben.com
 Personal blog of Nikhil Ben Kuruvilla <https://nikhilben.com>. I encourage you to use this blog in whatever ways you like, except for the articles.
 
 Introduction
-------------
+=======
 
 This blog is powered by Toto. Toto is a git-powered, minimalist blog engine for the hackers of Oz. The engine weighs around ~300 sloc at its worse.
 
 Blog in 10 seconds
-------------------
+==================
 
     $ git clone git://github.com/cloudhead/dorothy.git myblog
     $ cd myblog
@@ -17,7 +17,7 @@ Blog in 10 seconds
     $ git push heroku master
 
 How it works
-------------
+============
 
 - content is entirely managed through **git**; you get full fledged version control for free.
 - articles are stored as _.txt_ files, with embedded metadata (in yaml format).
@@ -43,7 +43,7 @@ It also includes a _.gems_ file, for heroku.
 If you are looking for the exact theme, head over to <https://github.com/nikhilben/toto-classic>
 
 Synopsis
---------
+========
 
 One would start by installing _toto_, with `sudo gem install toto`, and then forking or
 cloning the `dorothy` repo, to get a basic skeleton:
@@ -142,7 +142,7 @@ you could add `set :author, 'John Galt'` inside the `Toto::Server.new` block. He
     end
 
 Thanks
-------
+=======
 
 To heroku for making this easy as pie.
 To adam wiggins, as I stole a couple of ideas from Scanty.
