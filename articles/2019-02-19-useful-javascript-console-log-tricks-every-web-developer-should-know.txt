@@ -51,8 +51,8 @@ const failure = [
 <p>Upon using console the following way</p>
 
 <pre>
-console.log('%c Use signup was successfull!', success);
-console.log('%c Use signup was successfull!', failure);
+console.log('%c User signup was successfull!', success);
+console.log('%c User signup failed!', failure);
 </pre>
 
 <p>You could see a better much pleasant console output like the following</p>
