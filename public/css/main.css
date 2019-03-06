@@ -11,6 +11,9 @@ body {
 
 
 }
+.max-width-limit {
+  max-width: 100%;
+}
 .profiles > header, .markdown h1 {
   text-align: left;
 	display: block;
