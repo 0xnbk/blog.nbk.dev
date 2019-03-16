@@ -1,7 +1,7 @@
 blog.nikhilben.com
 ==================
 
-Personal blog of Nikhil Ben Kuruvilla <https://nikhilben.com>. I encourage you to use this blog in whatever ways you like, except for the articles.
+Personal blog of [Nikhil Ben Kuruvilla](https://nbk.dev). I encourage you to use this blog in whatever ways you like, except for the articles.
 
 Introduction
 =======
