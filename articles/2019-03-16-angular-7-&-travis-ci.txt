@@ -1,6 +1,6 @@
 title: Angular 7 & Travis CI
 author: Nikhil Ben Kuruvilla
-date: 2017/08/20
+date: 2019/03/16
 slug: angular-7-&-travis-ci
 
 There is official <a href="https://angular.io/guide/testing#configure-project-for-travis-ci" target="_blank">Angular documentation</a> which explains how to set up an Angular project with Travis CI. However its a bit confusing and includes multiple steps, at least for me. You need to create a new <code>protractor-ci.conf.js</code> file and alter the contents of the default <code>karma.conf.js</code> file. Chances are you completely miss this part and ends up with a failed Travis build. If you need a quick start Travis config file that works without altering multiple config files, then this post is for you.
