@@ -1,7 +1,7 @@
-blog.nikhilben.com
+blog.nbk.dev
 ==================
 
-Personal blog of [Nikhil Ben Kuruvilla](https://nbk.dev). I encourage you to use this blog in whatever ways you like, except for the articles.
+Personal blog of [NBK](https://nbk.dev). I encourage you to use this blog in whatever ways you like, except for the articles.
 
 Introduction
 =======
@@ -40,7 +40,7 @@ This site uses a customised version of the dorothy theme. Dorothy is toto's defa
 comes with a very minimalistic but functional template, and a _config.ru_ file to get you started.
 It also includes a _.gems_ file, for heroku.
 
-If you are looking for the exact theme, head over to <https://github.com/nikhilben/toto-classic>
+If you are looking for the exact theme, head over to <https://github.com/nbkdotdev/toto-classic>
 
 Synopsis
 ========
@@ -149,4 +149,4 @@ To adam wiggins, as I stole a couple of ideas from Scanty.
 To the developers of Rack, for making such an awesome platform.
 To cloudhead for making Toto & Dorothy, else I would not have this blog!
 
-Copyright (c) 2011-2019 Nikhil Ben Kuruvilla. See LICENSE for details.
+Copyright (c) 2011-2019 NBK. See LICENSE for details.
