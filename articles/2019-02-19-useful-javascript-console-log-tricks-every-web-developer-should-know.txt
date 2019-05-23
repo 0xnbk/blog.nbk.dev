@@ -1,5 +1,5 @@
 title: Useful javascript console.log() tricks that every web developer should know
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2019/02/19
 slug: useful-javascript-console-log-tricks-every-web-developer-should-know
 

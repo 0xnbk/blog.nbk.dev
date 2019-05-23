@@ -1,5 +1,5 @@
 title: Angular 7 & Travis CI
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2019/03/16
 slug: angular-7-&-travis-ci
 
@@ -7,7 +7,7 @@ There is official <a href="https://angular.io/guide/testing#configure-project-fo
 
 Create a new file <code>.travis.yml</code> in your root directory. Paste the following.
 
-<script src="https://gist.github.com/nikhilben/0186c3318e13ee8786b907a9cbdf735b.js"></script>
+<script src="https://gist.github.com/nbkdotdev/0186c3318e13ee8786b907a9cbdf735b.js"></script>
 
 That's it! You are done. 
 

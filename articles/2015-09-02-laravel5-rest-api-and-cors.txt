@@ -1,5 +1,5 @@
 title: Laravel-5 REST API and CORS
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2015/09/02
 slug: laravel5-rest-api-and-cors
 
@@ -7,17 +7,17 @@ Have been building a REST API using Laravel 5 as the backend and Backbone as Fro
 
 Create a new middleware <code>\app\http\middleware\Cors.php</code> in Laravel by giving the following command
 
-<code>nikhil@xps:~$ php artisan make:middleware Cors</code>
+<code>nbk@xps:~$ php artisan make:middleware Cors</code>
 
 Add the following code to the newly created middleware.
 
 
-<script src="https://gist.github.com/nikhilben/b155bd939a0bcc745756.js"></script>
+<script src="https://gist.github.com/nbkdotdev/b155bd939a0bcc745756.js"></script>
 
 <div class="bs-callout bs-callout-info"><h4>The <code>Cors</code> middleware should be placed before<code>verifyCsrfToken</code> middleware.</h4></div> 
 Update <code>app\http\kernel.php</code> to include the new middleware. Add <code>\App\Http\Middleware\Cors::class</code> to the <code>$middleware</code> array as shown below.
 
-<script src="https://gist.github.com/nikhilben/926d803ed02e9048fd44.js"></script>
+<script src="https://gist.github.com/nbkdotdev/926d803ed02e9048fd44.js"></script>
 
 <div class="bs-callout bs-callout-info"><h4>Wildcard <code>*</code> will not work in <code>Access-Control-Allow-Origin</code> header if <code>Access-Control-Allow-Credentials</code> header is set to <code>'true'</code></h4></div>
 
@@ -27,13 +27,13 @@ Last, inorder for your CORS to work, you need to add <code>header('Access-Contro
 
 You also need to set <code>Access-Control-Allow-Credentials</code> header to <code>'true'</code> for allowing <code>Cookies</code> to be set in the client. (The value 'true' always should be inside quotes, else it will return a value 1 and will be invalidated by the browser).
 
-<script src="https://gist.github.com/nikhilben/3e662489523a321d0769.js"></script>
+<script src="https://gist.github.com/nbkdotdev/3e662489523a321d0769.js"></script>
 
 <div class="bs-callout bs-callout-info"><h4>Laravel will automatically set <code>CSRF</code> token as a cookie in <code>XSRF-TOKEN</code> variable. This token needs to be send as <code>X-XSRF-TOKEN</code> header (and don't confuse it with <code>X-CSRF-TOKEN</code> header). Actually <code>XSRF-TOKEN</code> is the encrypted form of <code>CSRF</code> token. For some libraries like Angular, this is managed for you automatically.</h4></div>
 
 The Frontend code to manage ajax request will looks like this. You can use the <a href="https://github.com/js-cookie/js-cookie" target="_blank">JsCookies</a> plugin to manage cookies. This will automatically send <code>CSRF</code> token on every ajax request to the server (except <code>GET</code>).
 
-<script src="https://gist.github.com/nikhilben/45934f5fa7d56830656c.js"></script>
+<script src="https://gist.github.com/nbkdotdev/45934f5fa7d56830656c.js"></script>
 
 <strong>Final Thoughts:</strong>
 <p>One downside of CORS is multiple requests to the server. For any request, there will be an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests" target="_blank">Preflight</a> request in the form of <code>OPTIONS</code> request asking permission from remote server at first. Once the permission is accepted by returning suitable headers, the original request will be send.

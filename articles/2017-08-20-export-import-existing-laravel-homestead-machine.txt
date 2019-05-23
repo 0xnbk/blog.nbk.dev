@@ -1,5 +1,5 @@
 title: Export/Import existing laravel homestead machine
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2017/08/20
 slug: export-import-existing-laravel-homestead-machine
 
@@ -9,22 +9,22 @@ When you are developing Laravel application, its always a good idea to use <a hr
 
 Now you are already good with running Homestead box and need to export this (probably for a new colleague that joined your team or to use in your home system?). I will go through various steps involved in exporting a Homestead machine. First step is to make sure you are in the <code>Homestead</code> directory.
 
-<pre>nikhil@xps:~$ cd Homestead</pre>
+<pre>nbk@xps:~$ cd Homestead</pre>
 
 Now package the existing box by running the following command.
 
-<pre>nikhil@xps:~/Homestead$ vagrant package --output mynew.box</pre>
+<pre>nbk@xps:~/Homestead$ vagrant package --output mynew.box</pre>
 
 This will create a new file <code>mynew.box</code> in the <code>Homestead</code> directory. Depending on the size of the machine and the system configuration this could take a few minutes to generate the file.
 
 Now create a new file <code>metadata.json</code> (in the same 'Homestead' directory) and place the following content into it. 
 
-<script src="https://gist.github.com/nikhilben/4cb9e2924effcdd9a29cbed52f8406a3.js"></script>
+<script src="https://gist.github.com/nbkdotdev/4cb9e2924effcdd9a29cbed52f8406a3.js"></script>
 
 The above file tells vagrant that the name of the box is <code>laravel/homestead</code> and while importing the box in another machine, homestead will use this local machine than downloading an entire new machine. More on this will follow.
 Also note the <code>version</code> parameter. The value of the <code>version</code> can be obtained by running the following command
 
-<pre>nikhil@xps:~/Homestead$ vagrant box list
+<pre>nbk@xps:~/Homestead$ vagrant box list
 laravel/homestead      (virtualbox, 3.0.0)
 puphpet/ubuntu1404-x64 (virtualbox, 20161102)
 </pre>
@@ -57,7 +57,7 @@ That's it. Now copy the files <code>mynew.box</code>, <code>Homestead.yaml</code
 
 Do the necessary changes to the <code>Homestead.yaml</code> file if needed. A sample <code>Homestead.yaml</code> file can be found below.
 
-<script src="https://gist.github.com/nikhilben/ef211ee3568dc7543aa390d7c8d3810c.js"></script>
+<script src="https://gist.github.com/nbkdotdev/ef211ee3568dc7543aa390d7c8d3810c.js"></script>
 
 Now finally to import the box, run the following command in the <code>Homestead</code> directory of the target machine.
 

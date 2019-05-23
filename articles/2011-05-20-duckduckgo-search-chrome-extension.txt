@@ -1,5 +1,5 @@
 title: Duckduckgo Chrome Extension
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2011/05/20
 slug: duckduckgo-search-chrome-extension
 
@@ -7,13 +7,13 @@ slug: duckduckgo-search-chrome-extension
 
 <span>The source code for the chrome extension is released under the GPL License and is hosted on Github.
 
-<pre><code>git clone git://github.com/nikhilben/DuckDuckGo
+<pre><code>git clone git://github.com/nbkdotdev/DuckDuckGo
 </code></pre>
 
 
 <span><a href="http://duckduckgo.com" target="_blank">Duck Duck Go</a> is a search engine like <a href="http://google.com" target="_blank">Google</a>. Use it to get more Zero-click Info, more privacy, less spam, !bang syntax and lots of other goodies.  See <a href="http://duckduckgo.com/about.html" target="_blank">about page</a> for details. It has a traffic of 2 million direct <a href="http://http://duckduckgo.com/traffic.html" target="_blank">queries per month. </a>Duck Duck Go was solo-founded by <a href="http://ye.gg/">Gabriel Weinberg</a> in February 2008 and is based out of Valley Forge, PA (USA).  It has been self-funded to date.   It's also largely built <a href="http://www.gabrielweinberg.com/blog/2009/03/duck-duck-go-architecture.html">with <q>FOSS</q></a>.  They also <a href="http://ye.gg/tithe">give 10% of our income</a> to FOSS.</span>
 
-<span>Download DuckDuckGo Google Chrome extension <a href="https://github.com/nikhilben/DuckDuckGo" target="_blank">here</a></span>
+<span>Download DuckDuckGo Google Chrome extension <a href="https://github.com/nbkdotdev/DuckDuckGo" target="_blank">here</a></span>
 
 <span><strong>[UPDATE: This extension is no more developed or supported. Please use the official <a href="https://github.com/duckduckgo/chrome-zeroclickinfo" target="_blank">Duckduckgo Chrome Extension</a>]</strong></span>
 

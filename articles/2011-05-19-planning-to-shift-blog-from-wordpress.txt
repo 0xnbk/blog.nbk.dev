@@ -1,5 +1,5 @@
 title: Planning to shift my blog
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2011/05/19
 slug: planning-to-shift-blog-from-wordpress
 

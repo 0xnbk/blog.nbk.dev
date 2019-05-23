@@ -1,5 +1,5 @@
 title: What MYSQL does not tell you
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2011/08/14
 slug: what-mysql-does-not-tell-you
 

@@ -1,5 +1,5 @@
 title: Lisk JS - The Future?
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2017/12/15
 slug: lisk-js-the-future
 
@@ -43,7 +43,7 @@ Lisk is also designed with the intention of facilitating the trends, allowing up
 
 <strong>Sample Code:</strong>
 
-<script src="https://gist.github.com/nikhilben/0f15e963fe9e376bbd1706bfef34cfc9.js"></script>
+<script src="https://gist.github.com/nbkdotdev/0f15e963fe9e376bbd1706bfef34cfc9.js"></script>
 
 <strong>Some key features unique to Lisk are:</strong>
 

@@ -1,5 +1,5 @@
 title: Etherpad Lite & MongoDB
-author: Nikhil Ben Kuruvilla
+author: NBK
 date: 2013/11/01
 slug: etherpad-lite-and-mongo-db
 
@@ -8,12 +8,12 @@ By default <a href="https://github.com/ether/etherpad-lite" target="_blank">Ethe
 Change the directory to Etherpad installation, In my case
 </p>
 <pre>
-<code>nikhil@xps:~$ cd etherpad-lite
+<code>nbk@xps:~$ cd etherpad-lite
 </code>
 </pre>
 <p>Open up settings.json with any editor of your choice.</p>
 <pre>
-<code>nikhil@xps:~/etherpad-lite$ gedit settings.json
+<code>nbk@xps:~/etherpad-lite$ gedit settings.json
 </code>
 </pre>
 <p>
@@ -36,11 +36,11 @@ Change database type to "mongodb" and update settings. Make sure you provide the
 Upon running etherpad at this moment, you may encouter an error "cannot find mongodb". You need to install Mongodb using NPM.
 </p>
 <pre>
-<code>nikhil@xps:~/etherpad-lite$ npm install mongodb
+<code>nbk@xps:~/etherpad-lite$ npm install mongodb
 </code>
 </pre>
 <p>Thats it. You are done. Now we can run Etherpad by issuing the following command.</p>
 <pre>
-<code>nikhil@xps:~/etherpad-lite$ bin/run.sh
+<code>nbk@xps:~/etherpad-lite$ bin/run.sh
 </code>
 </pre>
