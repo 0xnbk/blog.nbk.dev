@@ -11,9 +11,9 @@
   <section class="comments">
 <h3>Your comments</h3>
 
-    <% if @config[:disqus] %>
-      <div id="disqus_thread"></div>
-      <script type="text/javascript" src="//disqus.com/forums/<%= @config[:disqus] %>/embed.js"> </script>
+    <% if @config[:commento] %>
+      <div id="commento"></div>
+      <script src="https://cdn.commento.io/js/commento.js"></script>
       <% end %>
   </section>
 </article>
