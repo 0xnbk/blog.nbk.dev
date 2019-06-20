@@ -26,7 +26,7 @@ How it works
 - toto is built right on top of **Rack**.
 - toto was built to take advantage of _HTTP caching_.
 - toto was built with heroku in mind.
-- comments are handled by [disqus](http://disqus.com)
+- comments are handled by [Commento](https://commento.io/)
 - individual articles can be accessed through urls such as _/2009/11/21/blogging-with-toto_
 - the archives can be accessed by year, month or day, with the same format as above.
 - arbitrary metadata can be included in articles files, and accessed from the templates.
