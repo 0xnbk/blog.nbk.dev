@@ -16,3 +16,4 @@ DEPENDENCIES
   builder
   rdiscount
   toto
+  rack-contrib
