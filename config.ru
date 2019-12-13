@@ -33,7 +33,10 @@ end
 
 # Security Headers
 use Rack::ResponseHeaders do |headers|
-      headers['X-Foo'] = 'bar'
+      headers['Content-Security-Policy'] = "default-src 'self' https://commento.io https://fonts.gstatic.com https://gist.github.com https://cdn.commento.io/js/commento.js https://commento.io/api/comment/list https://cdn.commento.io/css/commento.css; img-src 'self' data: https://stackexchange.com/users/flair/187709.png; style-src 'self' 'unsafe-inline' https://cdn.commento.io/css/commento.css https://github.githubassets.com https://fonts.googleapis.com/css"
+      headers['X-Frame-Options'] = "DENY"
+      headers['X-XSS-Protection'] = "1; mode=block"
+      headers['Referrer-Policy'] = "same-origin"
 end
 
 run toto
