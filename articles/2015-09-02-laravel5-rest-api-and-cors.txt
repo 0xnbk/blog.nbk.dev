@@ -7,7 +7,7 @@ Have been building a REST API using Laravel 5 as the backend and Backbone as Fro
 
 Create a new middleware <code>\app\http\middleware\Cors.php</code> in Laravel by giving the following command
 
-<code>nbk@xps:~$ php artisan make:middleware Cors</code>
+<pre><code>nbk@xps:~$ php artisan make:middleware Cors</code></pre>
 
 Add the following code to the newly created middleware.
 
