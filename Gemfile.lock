@@ -9,6 +9,7 @@ GEM
     toto (0.4.9)
       builder
       rack
+      rack-contrib
       rdiscount
 
 PLATFORMS
