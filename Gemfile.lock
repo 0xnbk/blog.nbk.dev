@@ -4,7 +4,7 @@ GEM
     builder (3.2.2)
     rack (1.6.11)
     rdiscount (2.1.7.1)
-    rack-contrib (>= 0)
+    rack-contrib (1.1.0)
     toto (0.4.9)
       builder
       rack
