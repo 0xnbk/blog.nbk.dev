@@ -1,5 +1,6 @@
 
 require 'toto'
+require 'rack/contrib'
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
@@ -28,6 +29,11 @@ toto = Toto::Server.new do
   # set :cache,      28800                                    # cache duration, in seconds
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
+end
+
+# Security Headers
+use Rack::ResponseHeaders do |headers|
+      headers['X-Foo'] = 'bar'
 end
 
 run toto
