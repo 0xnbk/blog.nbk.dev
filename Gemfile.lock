@@ -1,20 +1,27 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    builder (3.2.2)
-    rack (1.6.11)
-    rdiscount (2.1.7.1)
-    rack-contrib (>= 0)
+    builder (3.2.4)
+    rack (2.0.7)
+    rack-contrib (2.1.0)
+      rack (~> 2.0)
+    rdiscount (2.2.0.1)
     toto (0.4.9)
       builder
       rack
       rdiscount
 
 PLATFORMS
-  ruby
+  x64-mingw32
 
 DEPENDENCIES
   builder
+  rack-contrib
   rdiscount
   toto
-  rack-contrib
+
+RUBY VERSION
+   ruby 2.6.5p114
+
+BUNDLED WITH
+   1.17.2
