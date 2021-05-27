@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     builder (3.2.4)
-    rack (2.0.7)
+    rack (2.1.4)
     rack-contrib (2.1.0)
       rack (~> 2.1.4)
     rdiscount (2.2.0.1)
@@ -13,6 +13,7 @@ GEM
       rdiscount
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
