@@ -23,7 +23,7 @@ DEPENDENCIES
   toto
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.6.7
 
 BUNDLED WITH
    1.17.2
