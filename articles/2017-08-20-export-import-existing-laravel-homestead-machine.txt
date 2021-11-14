@@ -19,7 +19,7 @@ This will create a new file <code>mynew.box</code> in the <code>Homestead</code>
 
 Now create a new file <code>metadata.json</code> (in the same 'Homestead' directory) and place the following content into it. 
 
-<script src="https://gist.github.com/nbkdotdev/4cb9e2924effcdd9a29cbed52f8406a3.js"></script>
+<script src="https://gist.github.com/0xnbk/4cb9e2924effcdd9a29cbed52f8406a3.js"></script>
 
 The above file tells vagrant that the name of the box is <code>laravel/homestead</code> and while importing the box in another machine, homestead will use this local machine than downloading an entire new machine. More on this will follow.
 Also note the <code>version</code> parameter. The value of the <code>version</code> can be obtained by running the following command
@@ -57,7 +57,7 @@ That's it. Now copy the files <code>mynew.box</code>, <code>Homestead.yaml</code
 
 Do the necessary changes to the <code>Homestead.yaml</code> file if needed. A sample <code>Homestead.yaml</code> file can be found below.
 
-<script src="https://gist.github.com/nbkdotdev/ef211ee3568dc7543aa390d7c8d3810c.js"></script>
+<script src="https://gist.github.com/0xnbk/ef211ee3568dc7543aa390d7c8d3810c.js"></script>
 
 Now finally to import the box, run the following command in the <code>Homestead</code> directory of the target machine.
 

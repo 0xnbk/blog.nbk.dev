@@ -5,7 +5,7 @@ slug: programmatically-upload-a-file-from-SD-card-to-a-remote-server-using-phone
 
 <span><a href="http://phonegap.com" target="_blank">PhoneGap</a> is an HTML5 app platform that allows you to author native applications for Android, iPhone, WebOS, Symbian, Windows Phone or Blackberry with web technologies and get access to APIs and app stores. I have been working on phonegap for a while now. Although it is considered easy, its little bit tricky to get it work as expected. I found it difficult to get a solution to upload a file from SD Card to a remote server using phonegap. After little bit of googling and failed attempts, I decided to hack it myself and got it working.</span>
 
-<script src="https://gist.github.com/nbkdotdev/5902728.js"></script>
+<script src="https://gist.github.com/0xnbk/5902728.js"></script>
 
 <span>This question have been discussed in <a href="http://stackoverflow.com/questions/10799773/programmatically-upload-a-file-from-sd-card-to-a-remote-server-using-phonegap/" target="_blank">StackOverflow</a>. I dont know, if its the best solution. But it just works. Any modification or furthur ways to make this code better is welcome :-)</span>
 
